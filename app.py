@@ -212,8 +212,7 @@ def add_no_cache_headers(response):
     return response
 
 #  RUN
-if __name__ == "__main__":
-    app.run(debug=True)
 
-from mangum import Mangum
-handler = Mangum(app)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
